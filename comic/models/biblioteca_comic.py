@@ -26,10 +26,8 @@ class BaseArchive(models.AbstractModel):
             #Cambiamos el valor de activo a su version negada
             record.activo = not record.activo
 
-
 #Definimos modelo Biblioteca comic
 class BibliotecaComic(models.Model):
-
     #Nombre y descripcion del modelo
     _name = 'biblioteca.comic'
     #Hereda de "base.archive" (el modelo abstracto creado antes)

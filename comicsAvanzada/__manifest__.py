@@ -26,8 +26,10 @@ Gestor de bibliotecas (Version avanzada)
         'security/ir.model.access.csv',
         
         #Cargamos los ficheros con vistas tanto de biblioteca_comic como de biblioteca_comic_categoria
+        'views/biblioteca_comic_socios.xml',
         'views/biblioteca_comic.xml',
-        'views/biblioteca_comic_categoria.xml'
+        'views/biblioteca_comic_categoria.xml',
+        
     ],
     # Fichero con data de demo si se inicializa la base de datos con "demo data" (No incluido en ejemplo)
     # 'demo': [
