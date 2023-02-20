@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='paciente_action' model='ir.actions.act_window'>
+        <field name="name">Paciente</field>
+        <!-- Indicamos a que modelo aplica -->
+        <field name="res_model">paciente</field>
+        <!-- Indicamos que los comics pueden verse en tree para el listado,
+            y en form para la creación/edición -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Mi Hospital" id="hospital_base_menu" />
+    <menuitem name="Paciente" id="paciente_menu" parent="hospital_base_menu" action="paciente_action"/>
+
+        <record id="paciente_form_tree" model="ir.ui.view">
+        <field name="name">Lista de Pacientes</field>
+        <field name="model">paciente</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="last_name"/>                        
+                <field name="symptoms"/>
+            </tree>
+        </field>
+        </record>
+
+        <record model="ir.ui.view" id="paciente_form_view">
+            <field name="name">Paciente Form View</field>
+            <field name="model">paciente</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="last_name"/>
+                            <field name="symptoms"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+</odoo>
