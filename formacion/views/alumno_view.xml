@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='alumno_action' model='ir.actions.act_window'>
+        <field name="name">Alumno</field>
+        <!-- Indicamos a que modelo aplica -->
+        <field name="res_model">alumno</field>
+        <!-- Indicamos que los comics pueden verse en tree para el listado,
+            y en form para la creación/edición -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Alumno" id="alumno_menu" parent="formacion_base_menu" action="alumno_action"/>
+
+        <record id="alumno_form_tree" model="ir.ui.view">
+        <field name="name">Lista de Alumnos</field>
+        <field name="model">alumno</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="last_name"/>
+            </tree>
+        </field>
+        </record>
+
+        <record model="ir.ui.view" id="alumno_form_view">
+            <field name="name">Alumno Form View</field>
+            <field name="model">alumno</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="last_name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+</odoo>

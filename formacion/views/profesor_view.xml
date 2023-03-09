@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='profesor_action' model='ir.actions.act_window'>
+        <field name="name">Profesor</field>
+        <!-- Indicamos a que modelo aplica -->
+        <field name="res_model">profesor</field>
+        <!-- Indicamos que los comics pueden verse en tree para el listado,
+            y en form para la creación/edición -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Profesor" id="profesor_menu" parent="formacion_base_menu" action="profesor_action"/>
+
+        <record id="profesor_form_tree" model="ir.ui.view">
+        <field name="name">Lista de Profesores</field>
+        <field name="model">profesor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="last_name"/>
+            </tree>
+        </field>
+        </record>
+
+        <record model="ir.ui.view" id="profesor_form_view">
+            <field name="name">Profesor Form View</field>
+            <field name="model">profesor</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="last_name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+</odoo>

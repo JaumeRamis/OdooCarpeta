@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='director_action' model='ir.actions.act_window'>
+        <field name="name">Director</field>
+        <!-- Indicamos a que modelo aplica -->
+        <field name="res_model">director</field>
+        <!-- Indicamos que los comics pueden verse en tree para el listado,
+            y en form para la creación/edición -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Director" id="director_menu" parent="formacion_base_menu" action="director_action"/>
+
+        <record id="director_form_tree" model="ir.ui.view">
+        <field name="name">Lista de Director</field>
+        <field name="model">director</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="last_name"/>
+            </tree>
+        </field>
+        </record>
+
+        <record model="ir.ui.view" id="director_form_view">
+            <field name="name">Director Form View</field>
+            <field name="model">director</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="last_name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+</odoo

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='ciclo_action' model='ir.actions.act_window'>
+        <field name="name">Ciclo Formativo</field>
+        <!-- Indicamos a que modelo aplica -->
+        <field name="res_model">ciclo</field>
+        <!-- Indicamos que los comics pueden verse en tree para el listado,
+            y en form para la creación/edición -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Mi Instituto" id="formacion_base_menu" />
+    <menuitem name="Ciclo Formativo" id="ciclo_menu" parent="formacion_base_menu" action="ciclo_action"/>
+
+        <record id="ciclo_form_tree" model="ir.ui.view">
+        <field name="name">Lista de Ciclos</field>
+        <field name="model">ciclo</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nCiclo"/>
+                <field name="modulos"/>  
+            </tree>
+        </field>
+        </record>
+
+        <record model="ir.ui.view" id="ciclo_form_view">
+            <field name="name">Ciclo Form View</field>
+            <field name="model">ciclo</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="nCiclo"/>
+                            <field name="modulos"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+</odoo>

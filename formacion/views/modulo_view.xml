@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Definimos como mostramos la vista en el modelo -->
+    <record id='modulo_action' model='ir.actions.act_window'>
+        <field name="name">Modulo</field>
+        <!-- Indicamos a que modelo aplica -->
+        <field name="res_model">modulo</field>
+        <!-- Indicamos que los comics pueden verse en tree para el listado,
+            y en form para la creación/edición -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Modulo" id="modulo_menu" parent="formacion_base_menu" action="modulo_action"/>
+
+    <!-- Definición de la Vista formulario -->
+    <record id="modulo_view_form" model="ir.ui.view">
+        <field name="name">Formulario de Modulos</field>
+        <field name="model">modulo</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="nModulo"/>
+                    <field name="nAlumno"/>
+                    <field name="nProfesor"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Definición de la vista Tree -->
+    <record id="modulo_view_tree" model="ir.ui.view">
+        <field name="name">Lista de Modulos</field>
+        <field name="model">modulo</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nModulo"/>
+                <field name="nAlumno"/>
+                <field name="nProfesor"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
